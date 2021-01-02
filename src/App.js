@@ -9,13 +9,13 @@ import LoginForm from './components/LoginForm';
 class App extends Component {
   componentDidMount() {
     var firebaseConfig = {
-      apiKey: 'AIzaSyASeC2VO9Iebej6tCixqgwWPZ8MiHYNZjI',
-      authDomain: 'manager-f6e76.firebaseapp.com',
-      projectId: 'manager-f6e76',
-      storageBucket: 'manager-f6e76.appspot.com',
-      messagingSenderId: '156250609563',
-      appId: '1:156250609563:web:0010fa7b79f92e00d0f33e',
-      measurementId: 'G-KD2KVP003Q',
+      apiKey: 'AIzaSyBINXkFLe_nsBTIZ39vPYAgvXniHuMAXSs',
+      authDomain: 'manager-1e1cf.firebaseapp.com',
+      projectId: 'manager-1e1cf',
+      storageBucket: 'manager-1e1cf.appspot.com',
+      messagingSenderId: '868870481889',
+      appId: '1:868870481889:web:1f39f38ab003ea8d1b14a0',
+      measurementId: 'G-EW5384KL4D',
     };
 
     firebase.initializeApp(firebaseConfig);
