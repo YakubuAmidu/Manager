@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {emailChanged} from '../actions';
+import {emailChanged, passwordChanged} from '../actions';
 import {Card, CardSection, Input, Button} from './common';
 
 class LoginForm extends Component {
@@ -8,13 +8,16 @@ class LoginForm extends Component {
     this.props.emailChanged(text);
   }
 
+  onPasswordChage(text) {
+    this.props.passwordChanged(text);
+  }
+
   render() {
     return (
       <Card>
         <CardSection>
           <Input
-            l
-            abel="Email"
+            label="Email"
             placeholder="email@gmail.com"
             onChangeText={this.onEmailChange.bind(this)}
             value={this.props.email}
@@ -22,7 +25,12 @@ class LoginForm extends Component {
         </CardSection>
 
         <CardSection>
-          <Input secureTextEntry label="Password" placeholder="Password" />
+          <Input
+            secureTextEntry
+            label="Password"
+            placeholder="Password"
+            onChangeText={this.onPasswordChage.bind(this)}
+          />
         </CardSection>
 
         <CardSection>
