@@ -20,6 +20,8 @@ export const loginUser = ({email, password}) => {
     firebase
       .auth()
       .signInWithEmailAndPassword(email, password)
-      .then((user) => console.log(user));
+      .then((user) => {
+        dispatch({type: 'LOGIN_SUCCESS', payload: user});
+      });
   };
 };
