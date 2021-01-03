@@ -7,13 +7,22 @@ const RouterComponent = () => {
   return (
     <Router>
       <Scene key="root">
-        <Scene key="login" component={LoginForm} title="Please login" initial />
-        <Scene
-          key="employeeList"
-          component={EmployeeList}
-          title="Employees"
-          initial
-        />
+        <Scene key="auth">
+          <Scene
+            key="login"
+            component={LoginForm}
+            title="Please login"
+            initial
+          />
+        </Scene>
+        <Scene key="main">
+          <Scene
+            key="employeeList"
+            component={EmployeeList}
+            title="Employees"
+            initial
+          />
+        </Scene>
       </Scene>
     </Router>
   );
