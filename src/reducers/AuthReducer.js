@@ -21,8 +21,6 @@ export default (state = INITIAL_STATE, action) => {
       return {
         ...state,
         error: 'Authentication Failed.',
-        passwore: ' ',
-        email: '',
       };
     default:
       return state;
