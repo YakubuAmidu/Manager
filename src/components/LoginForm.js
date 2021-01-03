@@ -31,7 +31,7 @@ class LoginForm extends Component {
 
   renderButton() {
     if (this.props.loading) {
-      return <Spinner size="larg" />;
+      return <Spinner size="large" />;
     } else {
       return <Button onPress={this.onButtonPress.bind(this)}>Login</Button>;
     }
