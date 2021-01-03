@@ -4,12 +4,11 @@ import {createStore, applyMiddleware} from 'redux';
 import firebase from 'firebase';
 import thunk from 'redux-thunk';
 import reducers from './reducers';
-import LoginForm from './components/LoginForm';
 import Router from './Router';
 
 class App extends Component {
-  componentDidMount() {
-    var firebaseConfig = {
+  componentWillMount() {
+    const config = {
       apiKey: 'AIzaSyBINXkFLe_nsBTIZ39vPYAgvXniHuMAXSs',
       authDomain: 'manager-1e1cf.firebaseapp.com',
       projectId: 'manager-1e1cf',
@@ -19,11 +18,11 @@ class App extends Component {
       measurementId: 'G-EW5384KL4D',
     };
 
-    firebase.initializeApp(firebaseConfig);
+    firebase.initializeApp(config);
   }
 
   render() {
-    const store = createStore(reducers, {}, applyMiddleware(thunk));
+    const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
 
     return (
       <Provider store={store}>
