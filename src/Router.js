@@ -6,7 +6,7 @@ import EmployeeList from './components/EmployeeList';
 const RouterComponent = () => {
   return (
     <Router>
-      <Scene key="root">
+      <Scene key="root" hidNavBar>
         <Scene key="auth">
           <Scene
             key="login"
@@ -17,6 +17,10 @@ const RouterComponent = () => {
         </Scene>
         <Scene key="main">
           <Scene
+            rightTitle="Add"
+            onRight={() => {
+              console.log('right!!!');
+            }}
             key="employeeList"
             component={EmployeeList}
             title="Employees"
