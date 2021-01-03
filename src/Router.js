@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {Scene, Router} from 'react-native-router-flux';
 import LoginForm from './components/LoginForm';
 import EmployeeList from './components/EmployeeList';
