@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {employeeUpdat} from '../actions';
 import {Card, CardSection, Button, Input} from './common';
 
 class EmployeeCreate extends Component {
@@ -23,4 +25,4 @@ class EmployeeCreate extends Component {
   }
 }
 
-export default EmployeeCreate;
+export default connect(null, {employeeUpdat})(EmployeeCreate);
