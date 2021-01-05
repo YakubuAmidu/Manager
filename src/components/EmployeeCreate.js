@@ -5,6 +5,11 @@ import {employeeUpdate} from '../actions';
 import {Card, CardSection, Button, Input} from './common';
 
 class EmployeeCreate extends Component {
+  onButtonPress() {
+    const {name, phone, shift} = this.props;
+
+    this.props.employeeCreate({name, phone, shift});
+  }
   render() {
     return (
       <Card>
@@ -49,7 +54,7 @@ class EmployeeCreate extends Component {
         </CardSection>
 
         <CardSection>
-          <Button>Create</Button>
+          <Button onPress={this.onButtonPress.bind(this)}>Create</Button>
         </CardSection>
       </Card>
     );
