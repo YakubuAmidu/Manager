@@ -30,4 +30,10 @@ class EmployeeEdit extends Component {
   }
 }
 
+const mapStateToProps = (state) => {
+  const {name, phone, shift} = this.EmployeeForm;
+
+  return {name, phone, shift};
+};
+
 export default connect(null, {employeeUpdate})(EmployeeEdit);
