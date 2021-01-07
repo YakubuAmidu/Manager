@@ -9,13 +9,13 @@ import Router from './Router';
 class App extends Component {
   componentDidMount() {
     const firebaseconfig = {
-      apiKey: 'AIzaSyBINXkFLe_nsBTIZ39vPYAgvXniHuMAXSs',
-      authDomain: 'manager-1e1cf.firebaseapp.com',
-      projectId: 'manager-1e1cf',
-      storageBucket: 'manager-1e1cf.appspot.com',
-      messagingSenderId: '868870481889',
-      appId: '1:868870481889:web:1f39f38ab003ea8d1b14a0',
-      measurementId: 'G-EW5384KL4D',
+      // apiKey: '',
+      // authDomain: '',
+      // projectId: '',
+      // storageBucket: '',
+      // messagingSenderId: '',
+      // appId: '',
+      // measurementId: '',
     };
 
     firebase.initializeApp(firebaseconfig);

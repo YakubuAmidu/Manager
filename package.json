@@ -10,12 +10,13 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@react-native-community/async-storage": "^1.12.1",
     "firebase": "^8.2.1",
     "lodash": "^4.17.20",
     "react": "16.13.1",
     "react-native": "^0.63.4",
     "react-native-communications": "^2.2.1",
-    "react-native-router-flux": "^4.35.0",
+    "react-native-router-flux": "^4.2.0",
     "react-redux": "^7.2.2",
     "redux-thunk": "^2.3.0"
   },
