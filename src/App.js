@@ -8,7 +8,7 @@ import Router from './Router';
 
 class App extends Component {
   componentDidMount() {
-    const config = {
+    const firebaseconfig = {
       apiKey: 'AIzaSyBINXkFLe_nsBTIZ39vPYAgvXniHuMAXSs',
       authDomain: 'manager-1e1cf.firebaseapp.com',
       projectId: 'manager-1e1cf',
@@ -18,7 +18,7 @@ class App extends Component {
       measurementId: 'G-EW5384KL4D',
     };
 
-    firebase.initializeApp(config);
+    firebase.initializeApp(firebaseconfig);
   }
 
   render() {
