@@ -1,19 +1,17 @@
-import _, {map} from 'lodash';
+import _ from 'lodash';
 import React, {Component} from 'react';
-import communications from 'react-native-communications';
 import {connect} from 'react-redux';
+import Communications from 'react-native-communications';
 import EmployeeForm from './EmployeeForm';
 import {employeeUpdate, employeeSave, employeeDelete} from '../actions';
 import {Card, CardSection, Button, Confirm} from './common';
 
 class EmployeeEdit extends Component {
-  state = {
-    showModal: false,
-  };
+  state = {showModal: false};
 
-  componentDidMount() {
+  componentWillMount() {
     _.each(this.props.employee, (value, prop) => {
-      this.props.employeeUpdate({props, value});
+      this.props.employeeUpdate({prop, value});
     });
   }
 
@@ -26,7 +24,7 @@ class EmployeeEdit extends Component {
   onTextPress() {
     const {phone, shift} = this.props;
 
-    communications.text(phone, `Your up coming shift is on ${shift}`);
+    Communications.text(phone, `Your upcoming shift is on ${shift}`);
   }
 
   onAccept() {
@@ -43,8 +41,9 @@ class EmployeeEdit extends Component {
     return (
       <Card>
         <EmployeeForm />
+
         <CardSection>
-          <Button onPress={this.onButtonPress.bind(this)}>Save changes</Button>
+          <Button onPress={this.onButtonPress.bind(this)}>Save Changes</Button>
         </CardSection>
 
         <CardSection>
@@ -54,7 +53,7 @@ class EmployeeEdit extends Component {
         <CardSection>
           <Button
             onPress={() => this.setState({showModal: !this.state.showModal})}>
-            Fire employee
+            Fire Employee
           </Button>
         </CardSection>
 
@@ -62,7 +61,7 @@ class EmployeeEdit extends Component {
           visible={this.state.showModal}
           onAccept={this.onAccept.bind(this)}
           onDecline={this.onDecline.bind(this)}>
-          Are you sure you want to delete this ?
+          Are you sure you want to delete this?
         </Confirm>
       </Card>
     );
@@ -70,7 +69,7 @@ class EmployeeEdit extends Component {
 }
 
 const mapStateToProps = (state) => {
-  const {name, phone, shift} = this.EmployeeForm;
+  const {name, phone, shift} = state.employeeForm;
 
   return {name, phone, shift};
 };
