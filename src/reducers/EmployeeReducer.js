@@ -1,4 +1,3 @@
-import {ActionSheetIOS} from 'react-native';
 import {EMPLOYEES_FETCH_SUCCESS} from '../actions/types';
 
 const INITIAL_STATE = {};
