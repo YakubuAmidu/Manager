@@ -7,6 +7,10 @@ import {employeeUpdate, employeeSave} from '../actions';
 import {Card, CardSection, Button, Confirm} from './common';
 
 class EmployeeEdit extends Component {
+  state = {
+    showModal: false,
+  };
+
   componentDidMount() {
     _.each(this.props.employee, (value, prop) => {
       this.props.employeeUpdate({props, value});
@@ -37,7 +41,16 @@ class EmployeeEdit extends Component {
           <Button onPress={this.onTextPress.bind(this)}>Text Schedule</Button>
         </CardSection>
 
-        <Confirm>Are you sure you want to delete this ?</Confirm>
+        <CardSection>
+          <Button
+            onPress={() => this.setState({showModal: !this.state.showModal})}>
+            Fire employee
+          </Button>
+        </CardSection>
+
+        <Confirm visible={this.state.showModal}>
+          Are you sure you want to delete this ?
+        </Confirm>
       </Card>
     );
   }
