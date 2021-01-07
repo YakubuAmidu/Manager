@@ -6,14 +6,16 @@ import {employeesFetch} from '../actions';
 import ListItem from './ListItem';
 
 class EmployeeList extends Component {
-  componentDidMount() {
+  componentWillMount() {
     this.props.employeesFetch();
 
     this.createDataSource(this.props);
   }
 
   componentWillReceiveProps(nextProps) {
-    // NextProps are next set of props that this component will be rendered with. this.props is still the old set of props
+    // nextProps are the next set of props that this component
+    // will be rendered with
+    // this.props is still the old set of props
 
     this.createDataSource(nextProps);
   }
@@ -31,8 +33,6 @@ class EmployeeList extends Component {
   }
 
   render() {
-    console.log(this.props);
-
     return (
       <ListView
         enableEmptySections
